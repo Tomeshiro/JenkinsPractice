@@ -84,7 +84,7 @@ failure {
 script { 
 node { 
 echo «Это будет выполняться, если задача провалилась» 
-mail to: «ваша почта@gmail.com», 
+mail to: «rediskagamechannel@gmail.com», 
 subject: «${env.JOB_NAME} – Сборка № ${env.BUILD_NUMBER} провалилась», 
 body: «Для получения дополнительной информации о провале пайплайна, проверьте консольный вывод по 
 адресу ${env.BUILD_URL}» 
