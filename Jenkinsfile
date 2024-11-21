@@ -46,6 +46,7 @@ sh './smoke-tests || { echo "smoke-tests failed"; exit 1; }'
 stage("Проверка работоспособности") { 
 steps { 
 input "Следует ли отправить на продакшн?"
+cleanWs() 
 } 
 } 
 stage("Деплой на продакшн") { 
