@@ -46,7 +46,6 @@ sh './smoke-tests || { echo "smoke-tests failed"; exit 1; }'
 stage("Проверка работоспособности") { 
 steps { 
 input "Следует ли отправить на продакшн?"
-cleanWs() 
 } 
 } 
 stage("Деплой на продакшн") { 
@@ -68,11 +67,11 @@ script {
 node { 
 echo "Очистка рабочей области"
 sh 'ls -l' // Проверка прав доступа 
-} 
-}
 retry(3) { // Повторить 3 раза в случае неудачи 
 cleanWs() 
-}  
+} 
+} 
+} 
 } 
 success { 
 script { 
